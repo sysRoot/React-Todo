@@ -22,12 +22,26 @@ class App extends React.Component {
         };
     }
 
+    componentDidMount() {
+        if (localStorage.getItem('todos')) {
+            this.setState(prevState => {
+                return {
+                    ...prevState,
+                    todoItems: [...JSON.parse(localStorage.getItem('todos'))]
+                }
+            })
+        }
+    }
+    componentDidUpdate() {
+        localStorage.setItem('todos', JSON.stringify(this.state.todoItems))
+      }
     inputHandler = e => this.setState({ [e.target.name]: e.target.value });
 
     formHandler = e => {
         e.preventDefault();
         if (this.state.newTodo !== ``) {
             this.setState(prevState => {
+                
                 return {
                     ...prevState,
                     todoItems: [
@@ -39,8 +53,10 @@ class App extends React.Component {
                         }
                     ],
                     newTodo: ``
-                };
+                } 
+                
             });
+            
         }
     };
 
