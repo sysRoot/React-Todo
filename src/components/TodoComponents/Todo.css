@@ -1,0 +1,12 @@
+ol {
+    border: 1px solid #111;
+    border-top-left-radius: 5px;
+    border-bottom: unset;
+    border-right: unset;
+}
+
+li {
+    border: 2px inset #611;
+    border-left: unset;
+    border-top: unset;
+}

@@ -39,9 +39,9 @@ class App extends React.Component {
 
     formHandler = e => {
         e.preventDefault();
+        console.log('fired form handler')
         if (this.state.newTodo !== ``) {
             this.setState(prevState => {
-                
                 return {
                     ...prevState,
                     todoItems: [
@@ -54,7 +54,6 @@ class App extends React.Component {
                     ],
                     newTodo: ``
                 } 
-                
             });
             
         }

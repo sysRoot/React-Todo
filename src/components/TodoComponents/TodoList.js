@@ -1,12 +1,14 @@
 import React from 'react';
 import Todo from './Todo';
-
+import './Todo.css'
 const TodoList = ({ todoItems, toggle }) => {
     return (
         <>
-            {todoItems.map(todo => (
-                <Todo item={todo} toggle={toggle}/>
-            ))}
+            <ol>
+                {todoItems.map(todo => (
+                    <Todo item={todo} toggle={toggle} />
+                ))}
+            </ol>
         </>
     );
 };
